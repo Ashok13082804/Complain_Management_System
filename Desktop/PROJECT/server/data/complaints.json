@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "1770056765904",
+    "name": "john",
+    "role": "Staff",
+    "department": "Mechanical",
+    "category": "Student Complaint",
+    "description": "help me",
+    "isAnonymous": false,
+    "hasAttachment": false,
+    "status": "Pending",
+    "date": "2026-02-02T18:26:05.904Z"
+  },
+  {
+    "_id": "1770056777267",
+    "name": "Anonymous",
+    "role": "Student",
+    "department": "Electrical",
+    "category": "Building Complaint",
+    "description": "kjb",
+    "isAnonymous": true,
+    "hasAttachment": false,
+    "status": "Pending",
+    "date": "2026-02-02T18:26:17.267Z"
+  },
+  {
+    "_id": "1770090361045",
+    "name": "jijo",
+    "role": "Student",
+    "department": "Civil",
+    "category": "Staff Complaint",
+    "description": "ioihuihhiuuuugu",
+    "isAnonymous": false,
+    "hasAttachment": false,
+    "status": "Pending",
+    "date": "2026-02-03T03:46:01.045Z"
+  }
+]
