@@ -39,7 +39,7 @@ const AdminDashboard = () => {
         const fetchStats = async () => {
             console.log("Fetching Dashboard Stats...");
             try {
-                const res = await axios.get('http://localhost:5000/api/complaints/stats');
+                const res = await axios.get('/api/complaints/stats');
                 console.log("Stats Received:", res.data);
                 if (res.data) {
                     setStatsData(res.data);

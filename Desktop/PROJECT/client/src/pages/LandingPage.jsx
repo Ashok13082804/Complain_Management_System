@@ -79,7 +79,7 @@ const LandingPage = () => {
     const fetchHistory = async () => {
         if (user && !String(user.id).startsWith('demo-')) {
             try {
-                const res = await axios.get(`http://localhost:5000/api/complaints/my-history?userId=${user.id}`);
+                const res = await axios.get(`/api/complaints/my-history?userId=${user.id}`);
                 setHistory(res.data);
             } catch (err) {
                 console.error("Fetch history error:", err);
@@ -111,7 +111,7 @@ const LandingPage = () => {
     useEffect(() => {
         const checkServer = async () => {
             try {
-                await axios.get('http://localhost:5000/');
+                await axios.get('/api/auth/test');
                 setServerStatus(true);
             } catch (e) {
                 setServerStatus(false);
@@ -142,7 +142,7 @@ const LandingPage = () => {
                 console.log("Demo Complaint Submitted:", formData);
             } else {
                 const payload = { ...formData, userId: user?.id || null };
-                const res = await axios.post('http://localhost:5000/api/complaints', payload);
+                const res = await axios.post('/api/complaints', payload);
                 ticketId = res.data.id;
             }
 
@@ -186,7 +186,7 @@ const LandingPage = () => {
         e.preventDefault();
         if (!statusId) return;
         try {
-            const res = await axios.get(`http://localhost:5000/api/complaints/public/status/${statusId}`);
+            const res = await axios.get(`/api/complaints/public/status/${statusId}`);
             setStatusResult(res.data);
         } catch (err) {
             setStatusResult({ error: 'ID not found. Verify your Ticket ID.' });
@@ -197,7 +197,7 @@ const LandingPage = () => {
         if (window.confirm("Are you sure you want to clear your complaint history?")) {
             if (user && !String(user.id).startsWith('demo-')) {
                 try {
-                    await axios.delete('http://localhost:5000/api/complaints/my-history/clear', { data: { userId: user.id } });
+                    await axios.delete('/api/complaints/my-history/clear', { data: { userId: user.id } });
                 } catch (err) {
                     console.error("Clear history error:", err);
                 }

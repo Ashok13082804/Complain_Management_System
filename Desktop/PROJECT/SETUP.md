@@ -80,3 +80,11 @@ To access the Admin Portal:
 *   **"Node is not recognized"**: You didn't install Node.js. Install it and restart the computer.
 *   **"Server Error"**: Make sure the backend terminal is running and connected to the database.
 *   **Port Check**: Ensure ports 5000 and 5173 are free.
+
+A
+Total Complaints
+8
+Pending Review
+0
+Resolved Cases
+8 make this as the button 

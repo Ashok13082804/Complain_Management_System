@@ -16,7 +16,7 @@ const ComplaintTable = () => {
 
     const fetchComplaints = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/complaints');
+            const res = await axios.get('/api/complaints');
             if (Array.isArray(res.data)) {
                 setComplaints(res.data);
             } else {
@@ -38,7 +38,7 @@ const ComplaintTable = () => {
 
     const handleResolve = async (id) => {
         try {
-            await axios.patch(`http://localhost:5000/api/complaints/${id}/close`);
+            await axios.patch(`/api/complaints/${id}/close`);
 
             // Optimistic update
             setComplaints(complaints.map(c =>
@@ -55,7 +55,7 @@ const ComplaintTable = () => {
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure you want to delete this complaint? This cannot be undone.")) {
             try {
-                await axios.delete(`http://localhost:5000/api/complaints/${id}`);
+                await axios.delete(`/api/complaints/${id}`);
                 setComplaints(complaints.filter(c => c._id !== id));
             } catch (error) {
                 console.error('Error deleting complaint:', error);

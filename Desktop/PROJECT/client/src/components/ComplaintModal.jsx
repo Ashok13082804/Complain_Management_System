@@ -86,7 +86,7 @@ const ComplaintModal = ({ isOpen, complaint, onClose, onResolve }) => {
         if (!adminResponse.trim()) return alert("Please enter a response.");
         setIsSaving(true);
         try {
-            const response = await fetch(`http://localhost:5000/api/complaints/${complaint._id}/respond`, {
+            const response = await fetch(`/api/complaints/${complaint._id}/respond`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ adminResponse })
