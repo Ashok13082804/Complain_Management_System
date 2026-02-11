@@ -79,12 +79,30 @@ To access the Admin Portal:
 ## Troubleshooting
 *   **"Node is not recognized"**: You didn't install Node.js. Install it and restart the computer.
 *   **"Server Error"**: Make sure the backend terminal is running and connected to the database.
-*   **Port Check**: Ensure ports 5000 and 5173 are free.
 
-A
-Total Complaints
-8
-Pending Review
-0
-Resolved Cases
-8 make this as the button 
+### 🛑 Fix: Vite Proxy Error (ECONNREFUSED)
+If you see `http proxy error: /api/... AggregateError [ECONNREFUSED]`, it means the **Backend is not responding**.
+
+**Step-by-Step Fix for Windows:**
+1.  **Check the Backend Terminal**:
+    *   Find the terminal window running the Backend (Port 5000).
+    *   If you see `🚀 Server running on port 5000`, the server is fine.
+    *   If you see `Error: Cannot find module '...'`, you are missing a library.
+2.  **Install Missing Libraries**:
+    *   Go to the `server` folder in your terminal.
+    *   Run: `npm install` (this installs all standard libraries).
+    *   If a specific module like `moment` is mentioned, run: `npm install moment`.
+3.  **Check if Port 5000 is Occupied**:
+    *   Sometimes another app is using port 5000.
+    *   Open **Command Prompt** (as Admin) and run:
+        ```cmd
+        netstat -ano | findstr :5000
+        ```
+    *   If you see a line ending with a number (PID), another app is using it. You may need to restart your laptop.
+4.  **Advanced: Change Localhost to IP**:
+    *   If it still doesn't work, open `client/vite.config.js`.
+    *   Change `target: 'http://localhost:5000'` to `target: 'http://127.0.0.1:5000'`.
+
+---
+
+**Made with ❤️ for YellowShield Project**
